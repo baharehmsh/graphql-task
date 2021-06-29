@@ -51,6 +51,7 @@ dependencies {
     implementation "com.apollographql.apollo:apollo-runtime:$version_apollo"
     implementation "com.apollographql.apollo:apollo-coroutines-support:$version_apollo"
     implementation "com.google.dagger:hilt-android:$version_hilt"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "com.google.dagger:hilt-android-compiler:$version_hilt"
 
     testImplementation 'junit:junit:4.+'
