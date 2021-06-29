@@ -3,8 +3,9 @@ package com.example.graphqlapp.domain.mapper
 import com.example.graphqlapp.PostQuery
 import com.example.graphqlapp.model.Post
 import com.example.graphqlapp.model.User
+import javax.inject.Inject
 
-class NetworkDetailPostToPost : Mapper<PostQuery.Post, Post> {
+class NetworkDetailPostToPost @Inject constructor() : Mapper<PostQuery.Post, Post> {
     override fun map(input: PostQuery.Post): Post {
 
 
