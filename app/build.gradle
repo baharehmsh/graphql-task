@@ -2,6 +2,9 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id("com.apollographql.apollo").version("$version_apollo")
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id "dagger.hilt.android.plugin"
 }
 
 android {
@@ -47,6 +50,8 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$version_constraint_layout"
     implementation "com.apollographql.apollo:apollo-runtime:$version_apollo"
     implementation "com.apollographql.apollo:apollo-coroutines-support:$version_apollo"
+    implementation "com.google.dagger:hilt-android:$version_hilt"
+    kapt "com.google.dagger:hilt-android-compiler:$version_hilt"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

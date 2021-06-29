@@ -7,8 +7,9 @@ import com.apollographql.apollo.exception.ApolloException
 import com.example.graphqlapp.AllPostsQuery
 import com.example.graphqlapp.PostQuery
 import com.example.graphqlapp.model.Either
+import javax.inject.Inject
 
-class PostsService(
+class PostsService @Inject constructor(
     private val apolloClient: ApolloClient
 ) {
 

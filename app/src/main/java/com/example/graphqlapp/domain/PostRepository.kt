@@ -5,8 +5,9 @@ import com.example.graphqlapp.domain.mapper.NetworkPostToPost
 import com.example.graphqlapp.model.Either
 import com.example.graphqlapp.model.Post
 import com.example.graphqlapp.network.PostsService
+import javax.inject.Inject
 
-class PostRepository (
+class PostRepository @Inject constructor(
     private val postsService: PostsService,
     private val networkPostToPost: NetworkPostToPost,
     private val networkDetailPostToPost: NetworkDetailPostToPost,
@@ -18,7 +19,6 @@ class PostRepository (
             is Either.Success -> Either.Success(networkPostToPost.map(result.data))
         }
     }
-
 
 
     suspend fun getPost(id: String): Either<Post> {
