@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.graphqlapp.R
 import com.example.graphqlapp.databinding.FragmentAllPostsBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,7 +28,7 @@ class AllPostsFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
         binding.postListView.adapter = AllPostsAdapter(OnClickListener {
-            // viewModel.displayDetailPost(it)
+             viewModel.displayDetailPost(it)
         })
         binding.retry.setOnClickListener {
             viewModel.load()
@@ -60,6 +61,16 @@ class AllPostsFragment : Fragment() {
 
         binding.viewModel = viewModel
         binding.postListView.setHasFixedSize(false)
+
+        viewModel.navigateToDetailFragment.observe(this.viewLifecycleOwner, Observer {
+            if (it != null) {
+                this.findNavController().navigate(
+                    AllPostsFragmentDirections.actionAllPostsFragmentToPostDetailFragment(it.id)
+
+                )
+                viewModel.doneNavigating()
+            }
+        })
 
         return binding.root
     }

@@ -20,6 +20,10 @@ class AllPostsViewModel  @Inject constructor(private val postsRepository: PostRe
     val state: LiveData<AllPostViewState>
         get() = _state
 
+    private val _navigateToDetailFragment = MutableLiveData<Post>()
+    val navigateToDetailFragment: LiveData<Post>
+        get() = _navigateToDetailFragment
+
     init {
         load()
     }
@@ -34,6 +38,14 @@ class AllPostsViewModel  @Inject constructor(private val postsRepository: PostRe
                 is Either.Success -> AllPostViewState.Success(result.data)
             }
         }
+    }
+
+    fun displayDetailPost(post: Post) {
+        _navigateToDetailFragment.value = post
+    }
+
+    fun doneNavigating() {
+        _navigateToDetailFragment.value = null
     }
 
 }
