@@ -2,13 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.graphqlapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".GraphQlTaskApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".GraphQlTaskApp"
         android:theme="@style/Theme.GraphQLTask">
         <activity android:name=".ui.MainActivity">
             <intent-filter>
