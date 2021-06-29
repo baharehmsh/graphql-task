@@ -1,6 +1,8 @@
 package com.example.graphqlapp.ui
 
+import android.view.View
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 
 @BindingAdapter("postBodyTrimmed")
@@ -25,3 +27,12 @@ fun setPostBodyTrimmed(textView: TextView, body: String) {
 
     }
 }
+
+@BindingAdapter("isVisible")
+fun setVisibility(
+    view: View,
+    isVisible: Boolean
+) {
+    view.isVisible = isVisible
+}
+
