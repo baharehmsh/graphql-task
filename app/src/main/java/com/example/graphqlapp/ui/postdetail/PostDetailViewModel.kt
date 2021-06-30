@@ -7,13 +7,20 @@ import androidx.lifecycle.viewModelScope
 import com.example.graphqlapp.domain.PostRepository
 import com.example.graphqlapp.model.Either
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class PostDetailViewModel @Inject constructor(private val postsRepository: PostRepository) :
+class PostDetailViewModel @Inject constructor(
+    mainDispatcher : CoroutineDispatcher,
+    private val postsRepository: PostRepository) :
     ViewModel() {
 
+    private val job = SupervisorJob()
+    private val uiScope = CoroutineScope(mainDispatcher + job)
 
     private val _postDetailState = MutableLiveData(DetailPostViewState())
     val postDetailState: LiveData<DetailPostViewState>
@@ -21,7 +28,7 @@ class PostDetailViewModel @Inject constructor(private val postsRepository: PostR
 
 
     fun loadDetail(id: String) {
-        viewModelScope.launch {
+        uiScope.launch {
             _postDetailState.value = _postDetailState.value?.copy(
                 isLoading = true,
                 error = null,
@@ -41,5 +48,9 @@ class PostDetailViewModel @Inject constructor(private val postsRepository: PostR
                 )
             }
         }
+    }
+    override fun onCleared() {
+        super.onCleared()
+        this.job.cancel()
     }
 }
