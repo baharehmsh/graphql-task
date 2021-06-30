@@ -1,9 +1,9 @@
 package com.example.graphqlapp.ui.allposts
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.graphqlapp.domain.PostRepository
-import com.example.graphqlapp.model.Either
-import com.example.graphqlapp.model.Post
+import com.example.graphqlapp.data.repository.PostRepository
+import com.example.graphqlapp.data.Either
+import com.example.graphqlapp.data.model.Post
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK

@@ -1,10 +1,10 @@
-package com.example.graphqlapp.domain
+package com.example.graphqlapp.data.repository
 
-import com.example.graphqlapp.domain.mapper.NetworkDetailPostToPost
-import com.example.graphqlapp.domain.mapper.NetworkPostToPost
-import com.example.graphqlapp.model.Either
-import com.example.graphqlapp.model.Post
-import com.example.graphqlapp.network.PostsService
+import com.example.graphqlapp.data.mapper.NetworkDetailPostToPost
+import com.example.graphqlapp.data.mapper.NetworkPostToPost
+import com.example.graphqlapp.data.Either
+import com.example.graphqlapp.data.model.Post
+import com.example.graphqlapp.remote.network.PostsService
 import javax.inject.Inject
 
 class PostRepository @Inject constructor(

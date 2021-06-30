@@ -3,9 +3,8 @@ package com.example.graphqlapp.ui.postdetail
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.graphqlapp.domain.PostRepository
-import com.example.graphqlapp.model.Either
+import com.example.graphqlapp.data.repository.PostRepository
+import com.example.graphqlapp.data.Either
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
@@ -16,7 +15,8 @@ import javax.inject.Inject
 @HiltViewModel
 class PostDetailViewModel @Inject constructor(
     mainDispatcher : CoroutineDispatcher,
-    private val postsRepository: PostRepository) :
+    private val postsRepository: PostRepository
+) :
     ViewModel() {
 
     private val job = SupervisorJob()

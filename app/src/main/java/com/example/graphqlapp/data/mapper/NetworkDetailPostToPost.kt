@@ -1,8 +1,8 @@
-package com.example.graphqlapp.domain.mapper
+package com.example.graphqlapp.data.mapper
 
 import com.example.graphqlapp.PostQuery
-import com.example.graphqlapp.model.Post
-import com.example.graphqlapp.model.User
+import com.example.graphqlapp.data.model.Post
+import com.example.graphqlapp.data.model.User
 import javax.inject.Inject
 
 class NetworkDetailPostToPost @Inject constructor() : Mapper<PostQuery.Post, Post> {

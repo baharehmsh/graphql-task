@@ -1,12 +1,11 @@
-package com.example.graphqlapp.network
+package com.example.graphqlapp.remote.network
 
 import com.apollographql.apollo.ApolloClient
-import com.apollographql.apollo.api.Input
 import com.apollographql.apollo.coroutines.await
 import com.apollographql.apollo.exception.ApolloException
 import com.example.graphqlapp.AllPostsQuery
 import com.example.graphqlapp.PostQuery
-import com.example.graphqlapp.model.Either
+import com.example.graphqlapp.data.Either
 import javax.inject.Inject
 
 class PostsService @Inject constructor(

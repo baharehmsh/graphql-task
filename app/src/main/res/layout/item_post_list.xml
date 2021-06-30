@@ -37,6 +37,6 @@
     <data>
         <variable
             name="post"
-            type="com.example.graphqlapp.model.Post" />
+            type="com.example.graphqlapp.data.model.Post" />
     </data>
 </layout>

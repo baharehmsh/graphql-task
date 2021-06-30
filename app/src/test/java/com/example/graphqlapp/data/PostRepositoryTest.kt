@@ -1,13 +1,13 @@
-package com.example.graphqlapp.domain
+package com.example.graphqlapp.data
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.graphqlapp.AllPostsQuery
 import com.example.graphqlapp.PostQuery
-import com.example.graphqlapp.domain.mapper.NetworkDetailPostToPost
-import com.example.graphqlapp.domain.mapper.NetworkPostToPost
-import com.example.graphqlapp.model.Either
-import com.example.graphqlapp.model.Post
-import com.example.graphqlapp.network.PostsService
+import com.example.graphqlapp.data.mapper.NetworkDetailPostToPost
+import com.example.graphqlapp.data.mapper.NetworkPostToPost
+import com.example.graphqlapp.data.model.Post
+import com.example.graphqlapp.data.repository.PostRepository
+import com.example.graphqlapp.remote.network.PostsService
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK

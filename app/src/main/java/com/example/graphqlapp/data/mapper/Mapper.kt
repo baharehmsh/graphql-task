@@ -1,4 +1,4 @@
-package com.example.graphqlapp.domain.mapper
+package com.example.graphqlapp.data.mapper
 
 interface Mapper<T,R> {
 

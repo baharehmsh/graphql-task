@@ -1,4 +1,4 @@
-package com.example.graphqlapp.model
+package com.example.graphqlapp.data
 
 sealed class Either<T> {
 

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graphqlapp.databinding.ItemPostListBinding
-import com.example.graphqlapp.model.Post
+import com.example.graphqlapp.data.model.Post
 
 class AllPostsAdapter(private val clickListener: OnClickListener) :
     ListAdapter<Post, AllPostsAdapter.PostViewHolder>(DiffCallback) {

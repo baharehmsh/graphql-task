@@ -1,6 +1,6 @@
 package com.example.graphqlapp.ui.allposts
 
-import com.example.graphqlapp.model.Post
+import com.example.graphqlapp.data.model.Post
 
 sealed class AllPostViewState {
 
